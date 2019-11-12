@@ -3,6 +3,7 @@
 #include <vcl.h>
 #pragma hdrstop
 #include <list>
+#include <string.h>
 
 #include "Unit1.h"
 //---------------------------------------------------------------------------
@@ -13,7 +14,8 @@ TLabel *L;
 TPanel *P;
 TEdit *E;
 int x;
-Note *newNote;
+const int num = 20;
+Note *newNote[num];
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -30,20 +32,19 @@ void __fastcall TForm1::Edit1Click(TObject *Sender)
 
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
-	newNote = new Note(this);
-	string v;
-	newNote->Parent = this;
-	newNote->Top = x*50 + 90;
-	newNote->Top = x*50 + 75;
-	newNote->Left = 180;
-	newNote->Width = 689;
-	newNote->Caption = "Заметка " + IntToStr(x+1);
+	newNote[x] = new Note(ScrollBox1);
+	newNote[x]->Parent = ScrollBox1;
+	newNote[x]->Width = 650;
+	newNote[x]->Caption = "Заметка " + IntToStr(x+1);
 	x++;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button2Click(TObject *Sender)
 {
-	newNote->Free();
+	delete newNote[x];
 	x--;
 }
 //---------------------------------------------------------------------------
+
+
+

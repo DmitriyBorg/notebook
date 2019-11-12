@@ -22,9 +22,9 @@ __published:	// IDE-managed Components
 	TEdit *Edit1;
 	TButton *Button1;
 	TButton *Button2;
-	TPageControl *Tab;
-	TTabSheet *Page1;
-	TTabSheet *Page2;
+	TPageControl *PageControl1;
+	TTabSheet *TabSheet1;
+	TScrollBox *ScrollBox1;
 	void __fastcall Edit1Click(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
