@@ -20,6 +20,11 @@
 #include <System.Rtti.hpp>
 #include <Vcl.Bind.DBEngExt.hpp>
 #include <Vcl.Bind.Editors.hpp>
+#include <System.ImageList.hpp>
+#include <Vcl.ImgList.hpp>
+#include <iostream>
+#include <string>
+using namespace std;
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -40,20 +45,22 @@ __published:	// IDE-managed Components
 	void __fastcall ChooseNoteClick(TObject *Sender);
 	void __fastcall AddNoteClick(TObject *Sender);
 
+
+
+
 private:	// User declarations
-public:		// User declarations
+public:	   TListItem *ListIt;
+		   string name;
+		   string text;			// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };
 
 
-class Note : public TPanel
+class Note
 {
 
-	public:
-	_fastcall Note(Classes::TComponent* Owner) : TPanel(Owner)
+	public:	Note(ListIt)
 	{
-	 TPanel *P;
-	 P = new TPanel(Owner);
 	};
 
 };
