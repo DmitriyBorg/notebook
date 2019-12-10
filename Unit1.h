@@ -12,6 +12,14 @@
 #include <Vcl.Grids.hpp>
 #include <Vcl.ComCtrls.hpp>
 #include <Vcl.Menus.hpp>
+#include <Data.Bind.Components.hpp>
+#include <Data.Bind.EngExt.hpp>
+#include <Data.Bind.GenData.hpp>
+#include <Data.Bind.ObjectScope.hpp>
+#include <System.Bindings.Outputs.hpp>
+#include <System.Rtti.hpp>
+#include <Vcl.Bind.DBEngExt.hpp>
+#include <Vcl.Bind.Editors.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -20,19 +28,17 @@ __published:	// IDE-managed Components
 	TPanel *Panel2;
 	TButton *Search;
 	TEdit *Edit1;
-	TButton *Button1;
-	TButton *Button2;
-	TPageControl *PageControl1;
-	TTabSheet *TabSheet1;
-	TScrollBox *ScrollBox1;
-	TButton *Button3;
-	TButton *Button4;
-	TButton *Button5;
+	TButton *AddNote;
+	TButton *DeleteNote;
+	TButton *Clear;
+	TButton *ChooseNote;
+	TButton *SortNotes;
+	TListView *ListView1;
 	void __fastcall Edit1Click(TObject *Sender);
-	void __fastcall Add(TObject *Sender);
-	void __fastcall Button2Click(TObject *Sender);
-	void __fastcall Button3Click(TObject *Sender);
-	void __fastcall Button4Click(TObject *Sender);
+	void __fastcall DeleteNoteClick(TObject *Sender);
+	void __fastcall ClearClick(TObject *Sender);
+	void __fastcall ChooseNoteClick(TObject *Sender);
+	void __fastcall AddNoteClick(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

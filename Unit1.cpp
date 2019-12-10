@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "Unit1.h"
+#include "Unit2.h"
 using namespace std;
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -19,12 +20,15 @@ TEdit *E;
 int x;
 vector<Note*> newNote;
 vector<TRadioButton*> buttons;
-int num;
+TListItem *ListIt;
+
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner): TForm(Owner)
 {
-	int x = 0;
+	ListIt = ListView1->Items->Add();
+	ListIt->Caption = "Botswana";
+	ListIt->SubItems->Add("ааавлыалавызщла");
 }
 
 void __fastcall TForm1::Edit1Click(TObject *Sender)
@@ -33,52 +37,48 @@ void __fastcall TForm1::Edit1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Add(TObject *Sender)
+void __fastcall TForm1::DeleteNoteClick(TObject *Sender)
 {
-	Note *note1 = new Note(ScrollBox1);
-	note1 -> Parent = ScrollBox1;
-	note1 -> Width = 669;
-	note1 -> Top = x*45;
-	note1 -> Caption = "Заметка " + IntToStr(x+1);
-	newNote.push_back(note1);
-	TRadioButton *B;
-	B = new TRadioButton (note1);
-	B ->Parent = note1;
-	B -> Align = alClient;
-	B -> Visible = false;
-	buttons.push_back(B);
-	x++;
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::Button2Click(TObject *Sender)
-{
-   /* for (int i =0; i < x; i++) {
+
+  /* for (int i =0; i < x; i++) {
 
 		if(buttons[i] -> Checked)
 		{
+			for (int j; j < x; j++)
+			{
+
+			}
 			num = i;
 			delete newNote[num];
+
 		}
 	}
-	x--;  */
+	x--;              */
 }
 //---------------------------------------------------------------------------
 
 
 
-void __fastcall TForm1::Button3Click(TObject *Sender)
+void __fastcall TForm1::ClearClick(TObject *Sender)
 {
-	for (int i =0; i < x; i++) {
+  /*	for (int i =0; i < x; i++) {
 	 buttons[i] -> Checked = false;
-	}
+	}   */
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Button4Click(TObject *Sender)
+void __fastcall TForm1::ChooseNoteClick(TObject *Sender)
 {
-	for (int i =0; i < x; i++) {
+  /*	for (int i =0; i < x; i++) {
 	 buttons[i] -> Visible = true;
-	}
+	} */
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::AddNoteClick(TObject *Sender)
+{
+	Form2->Visible=true;
 }
 //---------------------------------------------------------------------------
 

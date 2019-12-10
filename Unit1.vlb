@@ -1,28 +1,35 @@
-﻿[Button2]
-Coordinates=10,78,59,58
-
-[Edit1]
-Coordinates=79,10,44,58
+﻿[Edit1]
+Coordinates=79,10,40,51
 
 [Search]
-Coordinates=133,10,55,58
+Coordinates=133,10,48,51
 
 [Panel1]
-Coordinates=262,10,54,58
+Coordinates=262,10,47,51
 
 [Panel2]
-Coordinates=198,10,54,58
-
-[Button1]
-Coordinates=10,10,59,58
-
-[TabSheet1]
-Coordinates=269,78,77,36
-
-[PageControl1]
-Coordinates=166,78,93,36
+Coordinates=198,10,47,51
 
 []
-Coordinates=79,78,77,36
+Coordinates=290,87,82,33
 Visible=True
+
+[ListView1]
+Coordinates=640,20,97,177
+Visible=True
+
+[AddNote]
+Coordinates=10,10,53,51
+
+[SortNotes]
+Coordinates=19,87,53,51
+
+[DeleteNote]
+Coordinates=10,78,53,51
+
+[ChooseNote]
+Coordinates=88,87,53,51
+
+[Clear]
+Coordinates=0,0,53,51
 
