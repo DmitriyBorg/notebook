@@ -23,6 +23,7 @@
 #include <System.ImageList.hpp>
 #include <Vcl.ImgList.hpp>
 #include <iostream>
+#include <vector>
 #include <string>
 using namespace std;
 //---------------------------------------------------------------------------
@@ -39,34 +40,40 @@ __published:	// IDE-managed Components
 	TButton *ChooseNote;
 	TButton *SortNotes;
 	TListView *ListView1;
+	TButton *load;
+	TButton *save;
 	void __fastcall Edit1Click(TObject *Sender);
 	void __fastcall DeleteNoteClick(TObject *Sender);
 	void __fastcall ClearClick(TObject *Sender);
 	void __fastcall ChooseNoteClick(TObject *Sender);
 	void __fastcall AddNoteClick(TObject *Sender);
+	void __fastcall loadClick(TObject *Sender);
+	void __fastcall saveClick(TObject *Sender);
 
-
-
-
-private:	// User declarations
+private:
 public:	   TListItem *ListIt;
-		   string name;
-		   string text;			// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };
 
 
 class Note
 {
-
-	public:	Note(ListIt)
+	public:	Note(string name, string text)
 	{
+		this -> name = name;
+		this -> text = text;
 	};
 
+	public: Note()
+	{
+	}
+	 string name;
+	 string text;
 };
 
 
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;
+extern vector <Note> notes;
 //---------------------------------------------------------------------------
 #endif
