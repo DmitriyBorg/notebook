@@ -17,11 +17,11 @@ __published:	// IDE-managed Components
 	TLabel *Label1;
 	TEdit *Заголовок;
 	TButton *AddNote;
-	TMemo *Текст;
 	TLabel *Label2;
 	TDateTimePicker *DateTimePicker1;
 	TDateTimePicker *DateTimePicker2;
 	TButton *AddReminder;
+	TMemo *Текст;
 	void __fastcall ЗаголовокClick(TObject *Sender);
 	void __fastcall ТекстClick(TObject *Sender);
 	void __fastcall AddNoteClick(TObject *Sender);

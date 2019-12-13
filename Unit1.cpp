@@ -63,38 +63,71 @@ void __fastcall TForm1::AddNoteClick(TObject *Sender)
 
 void __fastcall TForm1::loadClick(TObject *Sender)
 {
+	/*int itCount = 0;
+	FILE *file;
+	file = fopen("Notes.txt","r");
+	int i;
+	i = 0;
+
+	while (!feof(file))
+		{
+		  fscanf(file, "%s",notes[itCount].name);
+		  fscanf(file, "%s",notes[itCount].text);
+
+		  ListIt = ListView1->Items->Add();
+		  ListIt -> Caption = notes[itCount].name;
+		  ListIt -> SubItems -> Add(notes[itCount].text);
+		  itCount++;
+		}
+
+		fclose(file);         */
+
+
+
 	ifstream F;
-	string name;
-	string text;
+	string name, text;
 	F.open("Notes.txt");
-	int i = 0;
+	int itCount = 0;
 	while ((F.is_open())&&(!F.eof()))
 			{
+				F >> name;
+				F >> text;
+				notes.push_back(Note(name,text));
 
-				F >> notes[i].name;
-				F >>  notes[i].text;
-				i++;
+				ListIt = ListView1->Items->Add();
+				ListIt	-> Caption = notes[itCount].name.c_str();
+				ListIt -> SubItems -> Add(notes[itCount].text.c_str());
+				itCount++;
 			}
 
 		F.close();
-	for (int i = 0; i < ListView1->Items->Count; i++) {
-		ListIt = ListView1->Items->Add();
-		ListIt	-> Caption = notes[i].name.c_str();
-		ListIt	-> SubItems -> Add(notes[i].text.c_str());
-	}
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::saveClick(TObject *Sender)
 {
+  /*	FILE *file;
+	file = fopen("Notes.txt","w");
+	if(!feof(file))
+		{
+			for (int i=0; i < ListView1->Items->Count; i++) {
+			fprintf(file, "%s\n",notes[i].name);
+			fprintf(file, "%s",notes[i].text);
+			}
+		}
+		fclose(file);         */
+
+
+
+
 	ofstream F;
 	F.open("Notes.txt");
-	if((F.is_open())&&(!F.eof()))
+	if(!F.eof())
 		{
 			for (int i=0; i < ListView1->Items->Count; i++) {
 
 			F << notes[i].name<<endl;
-			F << notes[i].text;
+			F << notes[i].text<<endl;
 			}
 		}
 		F.close();
