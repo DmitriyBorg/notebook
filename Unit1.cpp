@@ -71,17 +71,17 @@ void __fastcall TForm1::loadClick(TObject *Sender)
 	string name, text;
 	string temp;
 	F.open("Notes.txt");
+	getline(F, name);
+	while(name != "")
+	{
+		getline(F, text);
+		Note(name,text);
 
-	while(getline(F, temp))
-			{
-				getline(F, name);
-				getline(F, text);
-				notes.push_back(Note(name,text));
-
-				ListIt = ListView1->Items->Add();
-				ListIt	-> Caption = name.c_str();
-				ListIt -> SubItems -> Add(text.c_str());
-			}
+		ListIt = ListView1->Items->Add();
+		ListIt	-> Caption = name.c_str();
+		ListIt -> SubItems -> Add(text.c_str());
+		getline(F, name);
+	}
 
 		F.close();
 }
@@ -95,8 +95,8 @@ void __fastcall TForm1::saveClick(TObject *Sender)
 		{
 			for (int i=0; i < ListView1->Items->Count; i++) {
 
-			F << notes[i].name<<endl;
-			F << notes[i].text;
+				F << notes[i].name<<endl;
+				F << notes[i].text<<endl;
 			}
 		}
 		F.close();

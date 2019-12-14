@@ -20,7 +20,6 @@ __fastcall TForm3::TForm3(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm3::Button1Click(TObject *Sender)
 {
-		itCount = Form1->ListView1 ->ItemIndex;
 		n = Name -> Text;
 		t = Text -> Text;
 		notes.push_back(Note(n.c_str(), t.c_str()));
