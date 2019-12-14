@@ -12,39 +12,28 @@ using namespace std;
 TForm2 *Form2;
 AnsiString t;
 AnsiString n;
-int itCount;
 //---------------------------------------------------------------------------
 __fastcall TForm2::TForm2(TComponent* Owner)
 	: TForm(Owner)
 {
-	itCount = 0;
-}
-//---------------------------------------------------------------------------
-
-
-void __fastcall TForm2::ЗаголовокClick(TObject *Sender)
-{
-	  Заголовок -> Text = "";
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm2::ТекстClick(TObject *Sender)
-{
-	Текст -> Text ="";
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm2::AddNoteClick(TObject *Sender)
 {
-		n = Заголовок -> Text;
-		t = Текст -> Text;
+		n = NameOfNote -> Text;
+		t = TextOfNote -> Text;
 	    notes.push_back(Note(n.c_str(), t.c_str()));
 		Form1 -> ListIt = Form1 -> ListView1->Items->Add();
-		Form1 -> ListIt	-> Caption = notes[itCount].name.c_str();
-		Form1 -> ListIt	-> SubItems -> Add(notes[itCount].text.c_str());
-
-		itCount++;
+		Form1 -> ListIt	-> Caption = notes[Form1->ListIt->Index].name.c_str();
+		Form1 -> ListIt	-> SubItems -> Add(notes[Form1->ListIt->Index].text.c_str());
 		Form2 -> Close();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::AddReminderClick(TObject *Sender)
+{
+		int type = 1;
 }
 //---------------------------------------------------------------------------
 

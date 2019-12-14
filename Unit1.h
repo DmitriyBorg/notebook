@@ -49,6 +49,8 @@ __published:	// IDE-managed Components
 	void __fastcall AddNoteClick(TObject *Sender);
 	void __fastcall loadClick(TObject *Sender);
 	void __fastcall saveClick(TObject *Sender);
+	void __fastcall ListView1SelectItem(TObject *Sender, TListItem *Item, bool Selected);
+
 
 private:
 public:	   TListItem *ListIt;
@@ -69,6 +71,7 @@ class Note
 	}
 	 string name;
 	 string text;
+	 int type;
 };
 
 

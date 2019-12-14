@@ -4,10 +4,11 @@
 #pragma hdrstop
 #include <string.h>
 #include <iostream>
-#include<fstream>
+#include<fstream.h>
 
 #include "Unit1.h"
 #include "Unit2.h"
+#include "Unit3.h"
 using namespace std;
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -55,7 +56,10 @@ void __fastcall TForm1::ChooseNoteClick(TObject *Sender)
 
 void __fastcall TForm1::AddNoteClick(TObject *Sender)
 {
+	Form2 ->NameOfNote->Clear();
+	Form2 ->TextOfNote->Clear();
 	Form2->Visible=true;
+
 }
 //---------------------------------------------------------------------------
 
@@ -63,41 +67,20 @@ void __fastcall TForm1::AddNoteClick(TObject *Sender)
 
 void __fastcall TForm1::loadClick(TObject *Sender)
 {
-	/*int itCount = 0;
-	FILE *file;
-	file = fopen("Notes.txt","r");
-	int i;
-	i = 0;
-
-	while (!feof(file))
-		{
-		  fscanf(file, "%s",notes[itCount].name);
-		  fscanf(file, "%s",notes[itCount].text);
-
-		  ListIt = ListView1->Items->Add();
-		  ListIt -> Caption = notes[itCount].name;
-		  ListIt -> SubItems -> Add(notes[itCount].text);
-		  itCount++;
-		}
-
-		fclose(file);         */
-
-
-
 	ifstream F;
 	string name, text;
+	string temp;
 	F.open("Notes.txt");
-	int itCount = 0;
-	while ((F.is_open())&&(!F.eof()))
+
+	while(getline(F, temp))
 			{
-				F >> name;
-				F >> text;
+				getline(F, name);
+				getline(F, text);
 				notes.push_back(Note(name,text));
 
 				ListIt = ListView1->Items->Add();
-				ListIt	-> Caption = notes[itCount].name.c_str();
-				ListIt -> SubItems -> Add(notes[itCount].text.c_str());
-				itCount++;
+				ListIt	-> Caption = name.c_str();
+				ListIt -> SubItems -> Add(text.c_str());
 			}
 
 		F.close();
@@ -106,20 +89,6 @@ void __fastcall TForm1::loadClick(TObject *Sender)
 
 void __fastcall TForm1::saveClick(TObject *Sender)
 {
-  /*	FILE *file;
-	file = fopen("Notes.txt","w");
-	if(!feof(file))
-		{
-			for (int i=0; i < ListView1->Items->Count; i++) {
-			fprintf(file, "%s\n",notes[i].name);
-			fprintf(file, "%s",notes[i].text);
-			}
-		}
-		fclose(file);         */
-
-
-
-
 	ofstream F;
 	F.open("Notes.txt");
 	if(!F.eof())
@@ -127,10 +96,22 @@ void __fastcall TForm1::saveClick(TObject *Sender)
 			for (int i=0; i < ListView1->Items->Count; i++) {
 
 			F << notes[i].name<<endl;
-			F << notes[i].text<<endl;
+			F << notes[i].text;
 			}
 		}
 		F.close();
+}
+//---------------------------------------------------------------------------
+
+
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ListView1SelectItem(TObject *Sender, TListItem *Item, bool Selected)
+
+{
+	 Form3 -> Name -> Text = ListView1->Selected -> Caption;
+	 Form3 -> Text -> Text = ListView1->Selected ->SubItems-> Strings[0];
+	 Form3->Visible=true;
 }
 //---------------------------------------------------------------------------
 

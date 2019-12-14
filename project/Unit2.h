@@ -15,16 +15,17 @@ class TForm2 : public TForm
 __published:	// IDE-managed Components
 	TPanel *Panel1;
 	TLabel *Label1;
-	TEdit *Заголовок;
+	TEdit *NameOfNote;
 	TButton *AddNote;
 	TLabel *Label2;
 	TDateTimePicker *DateTimePicker1;
 	TDateTimePicker *DateTimePicker2;
 	TButton *AddReminder;
-	TMemo *Текст;
-	void __fastcall ЗаголовокClick(TObject *Sender);
-	void __fastcall ТекстClick(TObject *Sender);
+	TMemo *TextOfNote;
+	TLabel *Label3;
+	TLabel *Label4;
 	void __fastcall AddNoteClick(TObject *Sender);
+	void __fastcall AddReminderClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
