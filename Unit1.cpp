@@ -9,6 +9,7 @@
 #include "Unit1.h"
 #include "Unit2.h"
 #include "Unit3.h"
+#include "time.h"
 using namespace std;
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -59,7 +60,6 @@ void __fastcall TForm1::AddNoteClick(TObject *Sender)
 	Form2 ->NameOfNote->Clear();
 	Form2 ->TextOfNote->Clear();
 	Form2->Visible=true;
-
 }
 //---------------------------------------------------------------------------
 
@@ -68,22 +68,28 @@ void __fastcall TForm1::AddNoteClick(TObject *Sender)
 void __fastcall TForm1::loadClick(TObject *Sender)
 {
 	ifstream F;
-	string name, text;
+	string name, full_text = "", line_text;
 	string temp;
 	F.open("Notes.txt");
-	getline(F, name);
-	while(name != "")
+	while(!F.eof())
 	{
-		getline(F, text);
-		Note(name,text);
+		getline(F, name);
+		getline(F, line_text);
+		while (line_text != " \n ") {
+			full_text += line_text;
+			getline(F, line_text);
+			line_text = " \n " + line_text;
+		}
+
 
 		ListIt = ListView1->Items->Add();
 		ListIt	-> Caption = name.c_str();
-		ListIt -> SubItems -> Add(text.c_str());
-		getline(F, name);
+		ListIt -> SubItems -> Add(full_text.c_str());
+		full_text = "";
 	}
-
 		F.close();
+		ListView1->Items->Item[ListIt->Index]->Delete();
+		notes.erase(notes.end());
 }
 //---------------------------------------------------------------------------
 
@@ -96,7 +102,7 @@ void __fastcall TForm1::saveClick(TObject *Sender)
 			for (int i=0; i < ListView1->Items->Count; i++) {
 
 				F << notes[i].name<<endl;
-				F << notes[i].text<<endl;
+				F << notes[i].text<<endl<<endl;
 			}
 		}
 		F.close();
@@ -114,4 +120,5 @@ void __fastcall TForm1::ListView1SelectItem(TObject *Sender, TListItem *Item, bo
 	 Form3->Visible=true;
 }
 //---------------------------------------------------------------------------
+
 

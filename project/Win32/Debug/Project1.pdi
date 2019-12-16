@@ -1,4 +1,7 @@
 bindengine230.bpl
+IndySystem230.bpl
+IndyCore230.bpl
+IndyProtocols230.bpl
 bindcompvcl230.bpl
 dbrtl230.bpl
 bindcomp230.bpl

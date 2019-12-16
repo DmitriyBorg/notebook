@@ -22,8 +22,6 @@ object Form1: TForm1
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 882
-    ExplicitHeight = 554
     DesignSize = (
       868
       532)
@@ -36,12 +34,18 @@ object Form1: TForm1
       Color = clSkyBlue
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 0
+      ExplicitLeft = 2
       ExplicitTop = 0
-      ExplicitWidth = 880
       DesignSize = (
         866
         41)
+      object Label1: TLabel
+        Left = 312
+        Top = 16
+        Width = 31
+        Height = 13
+        Caption = 'Label1'
+      end
       object Edit1: TEdit
         Left = 533
         Top = 11
@@ -51,7 +55,6 @@ object Form1: TForm1
         TabOrder = 0
         Text = #1048#1089#1082#1072#1090#1100' '#1074' '#1079#1072#1084#1077#1090#1082#1072#1093
         OnClick = Edit1Click
-        ExplicitLeft = 547
       end
       object Search: TButton
         Left = 668
@@ -61,7 +64,6 @@ object Form1: TForm1
         Anchors = [akTop, akRight, akBottom]
         Caption = #1053#1072#1081#1090#1080
         TabOrder = 1
-        ExplicitLeft = 682
       end
     end
     object AddNote: TButton
@@ -73,7 +75,6 @@ object Form1: TForm1
       Caption = #1044#1086#1073#1072#1074#1090#1100
       TabOrder = 1
       OnClick = AddNoteClick
-      ExplicitTop = 96
     end
     object DeleteNote: TButton
       Left = 35
@@ -84,7 +85,6 @@ object Form1: TForm1
       Caption = #1059#1076#1072#1083#1080#1090#1100
       TabOrder = 2
       OnClick = DeleteNoteClick
-      ExplicitTop = 127
     end
     object Clear: TButton
       Left = 32
@@ -95,7 +95,6 @@ object Form1: TForm1
       Caption = #1054#1095#1080#1089#1090#1080#1090#1100
       TabOrder = 3
       OnClick = ClearClick
-      ExplicitTop = 464
     end
     object ChooseNote: TButton
       Left = 32
@@ -106,7 +105,6 @@ object Form1: TForm1
       Caption = #1042#1099#1073#1088#1072#1090#1100
       TabOrder = 4
       OnClick = ChooseNoteClick
-      ExplicitTop = 433
     end
     object SortNotes: TButton
       Left = 35
@@ -116,7 +114,6 @@ object Form1: TForm1
       Anchors = [akLeft, akBottom]
       Caption = #1057#1086#1088#1090#1080#1088#1086#1074#1072#1090#1100
       TabOrder = 5
-      ExplicitTop = 158
     end
     object ListView1: TListView
       Left = 184
@@ -140,7 +137,6 @@ object Form1: TForm1
       TabOrder = 6
       ViewStyle = vsReport
       OnSelectItem = ListView1SelectItem
-      ExplicitHeight = 393
     end
     object load: TButton
       Left = 548
@@ -151,7 +147,6 @@ object Form1: TForm1
       Caption = #1047#1072#1075#1088#1091#1079#1072#1080#1090#1100' '#1076#1072#1085#1085#1099#1077
       TabOrder = 7
       OnClick = loadClick
-      ExplicitTop = 504
     end
     object save: TButton
       Left = 683
@@ -162,7 +157,6 @@ object Form1: TForm1
       Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1076#1072#1085#1085#1099#1077
       TabOrder = 8
       OnClick = saveClick
-      ExplicitTop = 504
     end
   end
 end

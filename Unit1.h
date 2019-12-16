@@ -42,6 +42,7 @@ __published:	// IDE-managed Components
 	TListView *ListView1;
 	TButton *load;
 	TButton *save;
+	TLabel *Label1;
 	void __fastcall Edit1Click(TObject *Sender);
 	void __fastcall DeleteNoteClick(TObject *Sender);
 	void __fastcall ClearClick(TObject *Sender);
@@ -71,7 +72,7 @@ class Note
 	}
 	 string name;
 	 string text;
-	 int type;
+	 int noteTime;
 };
 
 

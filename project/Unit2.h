@@ -18,12 +18,15 @@ __published:	// IDE-managed Components
 	TEdit *NameOfNote;
 	TButton *AddNote;
 	TLabel *Label2;
-	TDateTimePicker *DateTimePicker1;
-	TDateTimePicker *DateTimePicker2;
 	TButton *AddReminder;
 	TMemo *TextOfNote;
 	TLabel *Label3;
 	TLabel *Label4;
+	TLabel *Label5;
+	TLabel *Label6;
+	TLabel *Label7;
+	TDateTimePicker *DateTimePicker1;
+	TDateTimePicker *DateTimePicker2;
 	void __fastcall AddNoteClick(TObject *Sender);
 	void __fastcall AddReminderClick(TObject *Sender);
 private:	// User declarations
