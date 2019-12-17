@@ -56,19 +56,50 @@ public:	   TListItem *ListIt;
 
 class Note
 {
-	public:	Note(string name, string text)
+	public:	Note(string name, string text, short year,
+				 short daysYD, short hour, short minute, short second)
+	{
+		this -> name = name;
+		this -> text = text;
+		this -> year = year;
+		this -> daysYD = daysYD;
+		this -> hour = hour;
+		this -> minute = minute;
+		this -> second = second;
+	};
+
+	 short year;
+	 short daysYD;
+	 short hour;
+	 short minute;
+	 short second;
+
+	 string name;
+	 string text;
+	 long interval;
+};
+
+
+
+
+/*class Notification:public Note
+{
+
+public:	Notificztion(string name, string text)
 	{
 		this -> name = name;
 		this -> text = text;
 	};
+   int interval(int hourDTP, int minuteDTP, int secondDTP)
+   {
+		return(hourDTP - hourLocal)
+   }
+}   */
 
-	public: Note()
-	{
-	}
-	 string name;
-	 string text;
-	 int noteTime;
-};
+
+
+
+
 
 
 //---------------------------------------------------------------------------

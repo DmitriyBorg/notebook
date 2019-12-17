@@ -1,18 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.672,=C:\Users\БАН\Desktop\Notebook\project\Unit3.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.483,C:\Users\БАН\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\БАН\Desktop\Notebook\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.150,=C:\Users\БАН\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.483,C:\Users\БАН\Desktop\Notebook\Unit1.h=C:\Users\БАН\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.502,=C:\Users\БАН\Desktop\Notebook\project\Unit3.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.483,C:\Users\БАН\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\БАН\Desktop\Notebook\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.483,C:\Users\БАН\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\БАН\Desktop\Notebook\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.981,C:\Users\БАН\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\БАН\Desktop\Notebook\project\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.139,=C:\Users\БАН\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.403,C:\Users\БАН\Desktop\Notebook\project\Project1.cbproj=C:\Users\БАН\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.483,C:\Users\БАН\Desktop\Notebook\Unit1.cpp=C:\Users\БАН\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.117,=C:\Users\БАН\Desktop\Notebook\project\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.504,=C:\Users\БАН\Desktop\Notebook\project\Unit2.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.451,=C:\Users\БАН\Desktop\Notebook\project\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.981,C:\Users\БАН\Desktop\Notebook\project\Project1PCH1.h=C:\Users\БАН\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.483,C:\Users\БАН\Desktop\Notebook\Unit1.dfm=C:\Users\БАН\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2019.12.17 14:55:00.744,C:\Users\БАН\Desktop\Notebook\project\Unit3.cpp=</Transaction>
-    <Transaction>2019.12.17 16:13:31.502,=C:\Users\БАН\Desktop\Notebook\project\Unit3.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.504,=C:\Users\БАН\Desktop\Notebook\project\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.117,=C:\Users\БАН\Desktop\Notebook\project\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.403,C:\Users\БАН\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\БАН\Desktop\Notebook\project\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.744,C:\Users\БАН\Desktop\Notebook\project\Unit3.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.672,=C:\Users\БАН\Desktop\Notebook\project\Unit3.cpp</Transaction>
+    <Transaction>2019.12.17 16:34:13.059,=C:\Users\БАН\Desktop\Notebook\project\Unit4.cpp</Transaction>
+    <Transaction>2019.12.17 16:46:24.214,C:\Users\БАН\Desktop\Notebook\project\Unit3.cpp=</Transaction>
   </Transactions>
 </BorlandProject>
