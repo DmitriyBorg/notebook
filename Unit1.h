@@ -35,22 +35,17 @@ __published:	// IDE-managed Components
 	TButton *Search;
 	TEdit *Edit1;
 	TButton *AddNote;
-	TButton *DeleteNote;
-	TButton *Clear;
-	TButton *ChooseNote;
 	TButton *SortNotes;
 	TListView *ListView1;
 	TButton *load;
 	TButton *save;
 	TLabel *Label1;
+	TTimer *Timer1;
 	void __fastcall Edit1Click(TObject *Sender);
-	void __fastcall DeleteNoteClick(TObject *Sender);
-	void __fastcall ClearClick(TObject *Sender);
-	void __fastcall ChooseNoteClick(TObject *Sender);
 	void __fastcall AddNoteClick(TObject *Sender);
 	void __fastcall loadClick(TObject *Sender);
 	void __fastcall saveClick(TObject *Sender);
-	void __fastcall ListView1SelectItem(TObject *Sender, TListItem *Item, bool Selected);
+	void __fastcall Timer1Timer(TObject *Sender);
 
 
 private:

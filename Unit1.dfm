@@ -34,8 +34,6 @@ object Form1: TForm1
       Color = clSkyBlue
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 2
-      ExplicitTop = 0
       DesignSize = (
         866
         41)
@@ -68,7 +66,7 @@ object Form1: TForm1
     end
     object AddNote: TButton
       Left = 35
-      Top = 74
+      Top = 96
       Width = 114
       Height = 25
       Anchors = [akLeft, akBottom]
@@ -76,44 +74,14 @@ object Form1: TForm1
       TabOrder = 1
       OnClick = AddNoteClick
     end
-    object DeleteNote: TButton
-      Left = 35
-      Top = 105
-      Width = 114
-      Height = 25
-      Anchors = [akLeft, akBottom]
-      Caption = #1059#1076#1072#1083#1080#1090#1100
-      TabOrder = 2
-      OnClick = DeleteNoteClick
-    end
-    object Clear: TButton
-      Left = 32
-      Top = 442
-      Width = 117
-      Height = 25
-      Anchors = [akLeft, akBottom]
-      Caption = #1054#1095#1080#1089#1090#1080#1090#1100
-      TabOrder = 3
-      OnClick = ClearClick
-    end
-    object ChooseNote: TButton
-      Left = 32
-      Top = 411
-      Width = 117
-      Height = 25
-      Anchors = [akLeft, akBottom]
-      Caption = #1042#1099#1073#1088#1072#1090#1100
-      TabOrder = 4
-      OnClick = ChooseNoteClick
-    end
     object SortNotes: TButton
       Left = 35
-      Top = 136
+      Top = 127
       Width = 114
       Height = 25
       Anchors = [akLeft, akBottom]
       Caption = #1057#1086#1088#1090#1080#1088#1086#1074#1072#1090#1100
-      TabOrder = 5
+      TabOrder = 2
     end
     object ListView1: TListView
       Left = 184
@@ -134,9 +102,8 @@ object Form1: TForm1
         end>
       ColumnClick = False
       GridLines = True
-      TabOrder = 6
+      TabOrder = 3
       ViewStyle = vsReport
-      OnSelectItem = ListView1SelectItem
     end
     object load: TButton
       Left = 548
@@ -145,7 +112,7 @@ object Form1: TForm1
       Height = 25
       Anchors = [akLeft, akBottom]
       Caption = #1047#1072#1075#1088#1091#1079#1072#1080#1090#1100' '#1076#1072#1085#1085#1099#1077
-      TabOrder = 7
+      TabOrder = 4
       OnClick = loadClick
     end
     object save: TButton
@@ -155,8 +122,14 @@ object Form1: TForm1
       Height = 25
       Anchors = [akLeft, akBottom]
       Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1076#1072#1085#1085#1099#1077
-      TabOrder = 8
+      TabOrder = 5
       OnClick = saveClick
     end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 64
+    Top = 224
   end
 end

@@ -80,6 +80,13 @@ object Form2: TForm2
       Height = 13
       Caption = 'Label7'
     end
+    object Label8: TLabel
+      Left = 464
+      Top = 238
+      Width = 31
+      Height = 13
+      Caption = 'Label8'
+    end
     object NameOfNote: TEdit
       Left = 121
       Top = 61
@@ -115,7 +122,6 @@ object Form2: TForm2
       Top = 155
       Width = 134
       Height = 25
-      Anchors = [akLeft, akBottom]
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1085#1072#1087#1086#1084#1080#1085#1072#1085#1080#1077
       TabOrder = 3
       OnClick = AddReminderClick

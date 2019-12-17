@@ -31,29 +31,6 @@ void __fastcall TForm1::Edit1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::DeleteNoteClick(TObject *Sender)
-{
-//
-}
-//---------------------------------------------------------------------------
-
-
-
-void __fastcall TForm1::ClearClick(TObject *Sender)
-{
-	for (int i = 0; i < ListView1->Items->Count; i++) {
-		ListView1 -> Items->Item[i]->Checked = false;
-	}
-	ListView1-> Checkboxes = false;
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm1::ChooseNoteClick(TObject *Sender)
-{
-	ListView1-> Checkboxes = true;
-}
-//---------------------------------------------------------------------------
-
 
 void __fastcall TForm1::AddNoteClick(TObject *Sender)
 {
@@ -89,7 +66,7 @@ void __fastcall TForm1::loadClick(TObject *Sender)
 	}
 		F.close();
 		ListView1->Items->Item[ListIt->Index]->Delete();
-		notes.erase(notes.end());
+		notes.pop_back();
 }
 //---------------------------------------------------------------------------
 
@@ -110,15 +87,10 @@ void __fastcall TForm1::saveClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-//---------------------------------------------------------------------------
-
-void __fastcall TForm1::ListView1SelectItem(TObject *Sender, TListItem *Item, bool Selected)
-
+void __fastcall TForm1::Timer1Timer(TObject *Sender)
 {
-	 Form3 -> Name -> Text = ListView1->Selected -> Caption;
-	 Form3 -> Text -> Text = ListView1->Selected ->SubItems-> Strings[0];
-	 Form3->Visible=true;
+         Form3 ->Visible = true;
+		 Form3 -> Label1 -> Caption= "";
 }
 //---------------------------------------------------------------------------
-
 
