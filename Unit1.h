@@ -48,6 +48,7 @@ __published:	// IDE-managed Components
 	void __fastcall MyTimer(TObject *Sender);
 	void __fastcall ClearClick(TObject *Sender);
 	void __fastcall SortNotesClick(TObject *Sender);
+	void __fastcall SearchClick(TObject *Sender);
 
 
 private:
@@ -83,6 +84,58 @@ class Note
 bool operator<(const Note &x, const Note &y)
 {
 	return strlen(x.text.c_str()) < strlen(y.text.c_str());
+}
+
+
+string searchKMP(string stringToFind, string str)
+{
+		int n = strlen(stringToFind.c_str());
+		int m = strlen(str.c_str());
+		int *pi = new int[n];
+		int i = 0;
+		int j = 0;
+		int k = 0;
+		while (k != n)
+			{
+			 if (stringToFind[i] == stringToFind[j])
+			 {
+			   pi[i] = j+1;
+			   i++;
+			   j++;
+			 }
+			 else if (j==0)
+					{
+					 pi[i] = 0;
+					 i++;
+					}
+					else j = pi[j - 1];
+			 k++;
+			}
+		k = 0;
+		i = 0;
+		j = 0;
+		while (k != m)
+			{
+			 if (str[i] == stringToFind[j])
+				{
+				  i++;
+				  j++;
+				  if (j == n)
+				  {
+				   return str;
+				  }
+				 }
+			 else if (j == 0)
+				{
+				  i++;
+				  if (i == m)
+				  {
+					return "";
+				  }
+				}
+			 else j = pi[j-1];
+			 k++;
+			}
 }
 
 //---------------------------------------------------------------------------

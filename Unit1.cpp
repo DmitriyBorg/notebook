@@ -7,6 +7,7 @@
 #include<fstream.h>
 #include "Unit1.h"
 #include "Unit2.h"
+#include "Unit5.h"
 #include "Unit4.h"
 #include "time.h"
 #include <System.DateUtils.hpp>
@@ -25,6 +26,7 @@ TTimer *noteTimer;
 int interval;
 vector <Note> notes;
 vector <int> intervals;
+AnsiString textToSearch;
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner): TForm(Owner)
 {
@@ -203,4 +205,23 @@ void __fastcall TForm1::SortNotesClick(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TForm1::SearchClick(TObject *Sender)
+{
+	AnsiString text = Edit1->Text;
+	string textToSearch = text.c_str();
+	Form5->ListView1->Clear();
+	for (int i = 0; i < notes.size(); i++)
+	{
+	   if (searchKMP(textToSearch, notes[i].text) != ""||searchKMP(textToSearch, notes[i].name) != "")
+	   {
+		 Form5->ListIt = Form5 -> ListView1->Items->Add();
+		 Form5->ListIt -> Caption = notes[i].name.c_str();
+		 Form5->ListIt->SubItems->Add(notes[i].text.c_str());
+	   }
+	}
+	Form5 ->Visible = true;
+}
+//---------------------------------------------------------------------------
+
 

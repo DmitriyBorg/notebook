@@ -62,6 +62,7 @@ object Form1: TForm1
         Anchors = [akTop, akRight, akBottom]
         Caption = #1053#1072#1081#1090#1080
         TabOrder = 1
+        OnClick = SearchClick
       end
     end
     object AddNote: TButton
