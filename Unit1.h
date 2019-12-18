@@ -40,12 +40,14 @@ __published:	// IDE-managed Components
 	TButton *load;
 	TButton *save;
 	TLabel *Label1;
-	TTimer *Timer1;
+	TButton *Clear;
 	void __fastcall Edit1Click(TObject *Sender);
 	void __fastcall AddNoteClick(TObject *Sender);
 	void __fastcall loadClick(TObject *Sender);
 	void __fastcall saveClick(TObject *Sender);
-	void __fastcall Timer1Timer(TObject *Sender);
+	void __fastcall MyTimer(TObject *Sender);
+	void __fastcall ClearClick(TObject *Sender);
+	void __fastcall SortNotesClick(TObject *Sender);
 
 
 private:
@@ -67,7 +69,6 @@ class Note
 		this -> minute = minute;
 		this -> second = second;
 	};
-
 	 short year;
 	 short daysYD;
 	 short hour;
@@ -79,31 +80,15 @@ class Note
 	 long interval;
 };
 
-
-
-
-/*class Notification:public Note
+bool operator<(const Note &x, const Note &y)
 {
-
-public:	Notificztion(string name, string text)
-	{
-		this -> name = name;
-		this -> text = text;
-	};
-   int interval(int hourDTP, int minuteDTP, int secondDTP)
-   {
-		return(hourDTP - hourLocal)
-   }
-}   */
-
-
-
-
-
-
+	return strlen(x.text.c_str()) < strlen(y.text.c_str());
+}
 
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;
 extern vector <Note> notes;
+extern vector <int> intervals;
+extern TTimer *noteTimer;
 //---------------------------------------------------------------------------
 #endif

@@ -82,6 +82,7 @@ object Form1: TForm1
       Anchors = [akLeft, akBottom]
       Caption = #1057#1086#1088#1090#1080#1088#1086#1074#1072#1090#1100
       TabOrder = 2
+      OnClick = SortNotesClick
     end
     object ListView1: TListView
       Left = 184
@@ -125,11 +126,14 @@ object Form1: TForm1
       TabOrder = 5
       OnClick = saveClick
     end
-  end
-  object Timer1: TTimer
-    Enabled = False
-    OnTimer = Timer1Timer
-    Left = 64
-    Top = 224
+    object Clear: TButton
+      Left = 35
+      Top = 442
+      Width = 114
+      Height = 25
+      Caption = #1054#1095#1080#1089#1090#1080#1090#1100
+      TabOrder = 6
+      OnClick = ClearClick
+    end
   end
 end

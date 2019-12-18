@@ -2,8 +2,8 @@ object Form4: TForm4
   Left = 0
   Top = 0
   Caption = 'Form4'
-  ClientHeight = 300
-  ClientWidth = 635
+  ClientHeight = 223
+  ClientWidth = 441
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,19 +16,15 @@ object Form4: TForm4
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 635
-    Height = 300
+    Width = 441
+    Height = 223
     Align = alClient
-    Color = clHighlightText
+    Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 480
-    ExplicitTop = 136
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object Label1: TLabel
-      Left = 288
-      Top = 32
+      Left = 272
+      Top = 40
       Width = 42
       Height = 19
       Caption = 'Label1'
@@ -40,15 +36,28 @@ object Form4: TForm4
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 288
-      Top = 80
-      Width = 46
+      Left = 144
+      Top = 122
+      Width = 42
       Height = 19
       Caption = 'Label2'
-      Font.Charset = DEFAULT_CHARSET
+      Font.Charset = RUSSIAN_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
-      Font.Name = 'Tahoma'
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 16
+      Top = 8
+      Width = 42
+      Height = 19
+      Caption = 'Label3'
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
     end

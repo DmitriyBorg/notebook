@@ -14,7 +14,8 @@ AnsiString t;
 AnsiString n;
 TTimer *Timer1;
 int interval;
-unsigned short hourDTP, minuteDTP, secondDTP, msDTP, dayDTP, monthDTP, yearDTP,daysYDDTP;
+unsigned short hourDTP, minuteDTP, secondDTP, msDTP,
+dayDTP, monthDTP, yearDTP,daysYDDTP;
 
 
 int daysInMonth(int year, int month)
@@ -22,7 +23,7 @@ int daysInMonth(int year, int month)
 	if (month == 4 || month == 6 || month == 9 || month == 11)
 		return 30;
 	else if (month == 2)
-		return (((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) ? 29 : 28);
+		return (((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))? 29 : 28);
 	else
 		return 31;
 }
@@ -55,7 +56,14 @@ void __fastcall TForm2::AddNoteClick(TObject *Sender)
 {
 		n = NameOfNote -> Text;
 		t = TextOfNote -> Text;
-		notes.push_back(Note(n.c_str(), t.c_str(),yearDTP,daysYDDTP,hourDTP,minuteDTP,secondDTP));
+		notes.push_back(Note(n.c_str(), t.c_str(),yearDTP,daysYDDTP,
+		hourDTP,minuteDTP,secondDTP));
+		Form1 -> ListIt = Form1 -> ListView1->Items->Add();
+		Form1 -> ListIt	-> Caption = notes[Form1->ListIt->Index].name.c_str();
+		Form1->ListIt->SubItems->Add(notes[Form1->ListIt->Index].text.c_str());
+		NameOfNote->Clear();
+		TextOfNote->Clear();
+		Form2 -> Close();
 			interval = 0;
 			hourDTP = 0;
 			minuteDTP = 0;
@@ -65,19 +73,13 @@ void __fastcall TForm2::AddNoteClick(TObject *Sender)
 			monthDTP = 0;
 			yearDTP = 0;
 			daysYDDTP = 0;
-		Form1 -> ListIt = Form1 -> ListView1->Items->Add();
-		Form1 -> ListIt	-> Caption = notes[Form1->ListIt->Index].name.c_str();
-		Form1 -> ListIt	-> SubItems -> Add(notes[Form1->ListIt->Index].text.c_str());
-		NameOfNote->Clear();
-		TextOfNote->Clear();
-		Form2 -> Close();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm2::AddReminderClick(TObject *Sender)
 {
 
-  	DateTimePicker1->DateTime.CurrentDate();
+	DateTimePicker1->DateTime.CurrentDate();
 	DateTimePicker2->DateTime.CurrentTime();
 	TDateTime date = DateTimePicker1->Date;
 
@@ -93,12 +95,14 @@ void __fastcall TForm2::AddReminderClick(TObject *Sender)
 		time.DecodeTime(&hourDTP, &minuteDTP,&secondDTP, &msDTP);
 		date.DecodeDate(&yearDTP,&monthDTP, &dayDTP);
 		daysYDDTP = dayOfYear(yearDTP, monthDTP, dayDTP);
-
-	interval = ((yearDTP - yearLocal)*3600*86400 + (daysYDDTP - daysYDLocal)*86400 + (hourDTP-hourLocal)*3600 +
+	interval = ((yearDTP - yearLocal)*3600*86400 +
+	(daysYDDTP - daysYDLocal)*86400 + (hourDTP-hourLocal)*3600 +
 	(minuteDTP - minuteLocal)*60 + (secondDTP-secondLocal))*1000;
+	Form1->Label1->Caption = interval;
 
-	Form1 -> Timer1->Interval = interval;
-	Form1 -> Timer1 -> Enabled = true;
-	Form1 -> Label1 -> Caption = Form1->Timer1->Interval;
+	intervals.push_back(interval);
+		noteTimer = new TTimer(Form1);
+		noteTimer -> Interval = interval;
+		noteTimer -> OnTimer = Form1 -> MyTimer;
 }
 
