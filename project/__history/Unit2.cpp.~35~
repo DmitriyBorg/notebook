@@ -100,12 +100,9 @@ void __fastcall TForm2::AddReminderClick(TObject *Sender)
 	(minuteDTP - minuteLocal)*60 + (secondDTP-secondLocal))*1000;
 	Form1->Label1->Caption = interval;
 
-	if(interval > 0)
-	{
-		intervals.push_back(interval);
+	intervals.push_back(interval);
 		noteTimer = new TTimer(Form1);
 		noteTimer -> Interval = interval;
 		noteTimer -> OnTimer = Form1 -> MyTimer;
-	}
 }
 

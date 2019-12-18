@@ -141,7 +141,7 @@ void __fastcall TForm1::MyTimer(TObject *Sender)
 {
 	int min = 0;
    for (int i = 0; i < intervals.size(); i++) {
-	 if ((intervals[min] > intervals[i]) && intervals[i]!=0)
+	 if ((intervals[min] > intervals[i]) && intervals[i] > 0)
 	 {
 		min = i;
 	 }
@@ -156,12 +156,12 @@ void __fastcall TForm1::MyTimer(TObject *Sender)
    Label2 -> Left = 150; Label2 -> Top = 122;
    Label1 -> Left = 270; Label1 -> Top = 40;
 
-   Label1 -> Caption = notes[min].name.c_str();
-   Label2 -> Caption = notes[min].text.c_str();
-   Label3 -> Caption = "Напоминание";
+	Notification->Label1 -> Caption = notes[min].name.c_str();
+	Notification->Label2 -> Caption = notes[min].text.c_str();
+	Notification->Label3 -> Caption = "Напоминание";
+	Notification->Visible = true;
    intervals[min] = -1;
-   Label1->Caption = "истекло";
-   min = 0;
+	Label1->Caption = "истекло";
 }
 
 
@@ -199,6 +199,7 @@ void __fastcall TForm1::SortNotesClick(TObject *Sender)
 		  (notes[i].second - secondLocal))*1000;
 		  intervals.push_back(interval);
 		}
+		else {intervals.push_back(-1);}
 	}
 }
 //---------------------------------------------------------------------------
