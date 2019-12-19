@@ -4,7 +4,7 @@
 #pragma hdrstop
 #include <string.h>
 #include <iostream>
-#include<fstream.h>
+#include<fstream>
 #include "Unit1.h"
 #include "Unit2.h"
 #include "Unit5.h"
@@ -23,7 +23,6 @@ TLabel *L;
 TPanel *P;
 TEdit *E;
 TTimer *noteTimer;
-int interval;
 vector <Note> notes;
 vector <int> intervals;
 AnsiString textToSearch;
@@ -54,7 +53,7 @@ void __fastcall TForm1::loadClick(TObject *Sender)
 {
 	ifstream F;
 	string name, full_text = "", line_text, daysYD, hour, year, second, minute;
-
+	int interval;
 	time_t seconds = time(NULL);
 	tm* timeinfo = localtime(&seconds);
 	int hourLocal = timeinfo->tm_hour;
@@ -143,7 +142,7 @@ void __fastcall TForm1::MyTimer(TObject *Sender)
 {
 	int min = 0;
    for (int i = 0; i < intervals.size(); i++) {
-	 if ((intervals[min] > intervals[i]) && intervals[i] > 0)
+	 if (intervals[i] == 0)
 	 {
 		min = i;
 	 }
@@ -163,7 +162,10 @@ void __fastcall TForm1::MyTimer(TObject *Sender)
 	Notification->Label3 -> Caption = "Напоминание";
 	Notification->Visible = true;
    intervals[min] = -1;
-	Label1->Caption = "истекло";
+   Label1->Caption = intervals[1];
+   Label2->Caption = intervals[0];
+   Label3->Caption = intervals[2];
+
 }
 
 
@@ -177,6 +179,7 @@ void __fastcall TForm1::ClearClick(TObject *Sender)
 
 void __fastcall TForm1::SortNotesClick(TObject *Sender)
 {
+	int interval;
 	time_t seconds = time(NULL);
 	tm* timeinfo = localtime(&seconds);
 	int hourLocal = timeinfo->tm_hour;
@@ -194,7 +197,7 @@ void __fastcall TForm1::SortNotesClick(TObject *Sender)
 		ListIt -> SubItems -> Add(notes[i].text.c_str());
 		if (notes[i].year > 0)
 		{
-		  interval = ((notes[i].year - yearLocal)*3600*86400 +
+		  interval = ((notes[i].year - yearLocal)*365*86400 +
 		  (notes[i].daysYD - daysYDLocal)*86400 +
 		  (notes[i].hour - hourLocal)*3600 +
 		  (notes[i].minute - minuteLocal)*60 +

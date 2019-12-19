@@ -41,6 +41,8 @@ __published:	// IDE-managed Components
 	TButton *save;
 	TLabel *Label1;
 	TButton *Clear;
+	TLabel *Label2;
+	TLabel *Label3;
 	void __fastcall Edit1Click(TObject *Sender);
 	void __fastcall AddNoteClick(TObject *Sender);
 	void __fastcall loadClick(TObject *Sender);
@@ -81,13 +83,13 @@ class Note
 	 long interval;
 };
 
-bool operator<(const Note &x, const Note &y)
+const bool operator<(const Note &x, const Note &y)
 {
 	return strlen(x.text.c_str()) < strlen(y.text.c_str());
 }
 
 
-string searchKMP(string stringToFind, string str)
+const string searchKMP(string stringToFind, string str)
 {
 		int n = strlen(stringToFind.c_str());
 		int m = strlen(str.c_str());

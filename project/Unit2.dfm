@@ -59,34 +59,6 @@ object Form2: TForm2
       Anchors = [akLeft, akBottom]
       Caption = #1058#1077#1082#1089#1090
     end
-    object Label5: TLabel
-      Left = 488
-      Top = 24
-      Width = 31
-      Height = 13
-      Caption = 'Label5'
-    end
-    object Label6: TLabel
-      Left = 464
-      Top = 200
-      Width = 31
-      Height = 13
-      Caption = 'Label6'
-    end
-    object Label7: TLabel
-      Left = 464
-      Top = 219
-      Width = 31
-      Height = 13
-      Caption = 'Label7'
-    end
-    object Label8: TLabel
-      Left = 464
-      Top = 238
-      Width = 31
-      Height = 13
-      Caption = 'Label8'
-    end
     object NameOfNote: TEdit
       Left = 121
       Top = 61

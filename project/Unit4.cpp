@@ -4,8 +4,6 @@
 #pragma hdrstop
 
 #include "Unit4.h"
-
-#include "Unit1.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"

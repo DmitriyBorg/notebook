@@ -40,7 +40,7 @@ int dayOfYear(int year, int month, int day)
 __fastcall TForm2::TForm2(TComponent* Owner)
 	: TForm(Owner)
 {
-	interval = 0;
+	interval = -1;
 	hourDTP = 0;
 	minuteDTP = 0;
 	secondDTP = 0;
@@ -64,7 +64,7 @@ void __fastcall TForm2::AddNoteClick(TObject *Sender)
 		NameOfNote->Clear();
 		TextOfNote->Clear();
 		Form2 -> Close();
-			interval = 0;
+			interval = -1;
 			hourDTP = 0;
 			minuteDTP = 0;
 			secondDTP = 0;
@@ -95,7 +95,7 @@ void __fastcall TForm2::AddReminderClick(TObject *Sender)
 		time.DecodeTime(&hourDTP, &minuteDTP,&secondDTP, &msDTP);
 		date.DecodeDate(&yearDTP,&monthDTP, &dayDTP);
 		daysYDDTP = dayOfYear(yearDTP, monthDTP, dayDTP);
-	interval = ((yearDTP - yearLocal)*3600*86400 +
+	interval = ((yearDTP - yearLocal)*365*86400 +
 	(daysYDDTP - daysYDLocal)*86400 + (hourDTP-hourLocal)*3600 +
 	(minuteDTP - minuteLocal)*60 + (secondDTP-secondLocal))*1000;
 	Form1->Label1->Caption = interval;
