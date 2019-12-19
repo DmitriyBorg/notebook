@@ -192,7 +192,7 @@ void __fastcall TForm1::SortNotesClick(TObject *Sender)
 		ListIt -> SubItems -> Add(notes[i].text.c_str());
 		if (notes[i].year > 0)
 		{
-		  interval = ((notes[i].year - yearLocal)*3600*86400 +
+		  interval = ((notes[i].year - yearLocal)*365*86400 +
 		  (notes[i].daysYD - daysYDLocal)*86400 +
 		  (notes[i].hour - hourLocal)*3600 +
 		  (notes[i].minute - minuteLocal)*60 +
